@@ -1,0 +1,23 @@
+As of today 26th March, 10.30 PM (All times are in IST); uses:-
+1) node.js
+2) jQuery
+3) redis
+4) mustache
+
+NOTE: Most of the stuff here is filched from streehoarding & skeet
+      So, I am not gonna pretend it's original. In fact, this is a
+      shameless clone which serves as a workshop where I sharpen
+      my toolset. Depending on the time of the day, there would be
+      a version here, which for all intents and purposes might not
+      be what you are looking for; but heck, what do I care. Thanks
+      for dropping by anyway.
+
+Added by Shahid on 26th March 2010 at 7PM
+==========================================
+This is a simple MOTD app at the moment; showing last 10 messages entered via the textbox.
+Streehoarding served as the base.
+
+Added by Shahid on 26th March 2010 at 10.30PM
+=============================================
+Yay! Incorporated mustache such that each displayed MOTD is displayed 
+via a mustache template. On same lines as skeet.
