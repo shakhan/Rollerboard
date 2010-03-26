@@ -1,23 +1,62 @@
-As of today 26th March, 10.30 PM (All times are in IST); uses:-
-1) node.js
-2) jQuery
-3) redis
-4) mustache
+http://twitter.com/shakhan
+
+This is a simple MOTD (message of the day) app at the moment; showing last 10 messages 
+entered via the textbox. Streehoarding served as the base.
 
 NOTE: Most of the stuff here is filched from streehoarding & skeet
       So, I am not gonna pretend it's original. In fact, this is a
       shameless clone which serves as a workshop where I sharpen
-      my toolset. Depending on the time of the day, there would be
+      my toolset. Even the setup instructions below are mostly copied 
+      as-is. Depending on the time of the day, there would be
       a version here, which for all intents and purposes might not
       be what you are looking for; but heck, what do I care. Thanks
       for dropping by anyway.
 
-Added by Shahid on 26th March 2010 at 7PM
-==========================================
-This is a simple MOTD app at the moment; showing last 10 messages entered via the textbox.
-Streehoarding served as the base.
+---
 
-Added by Shahid on 26th March 2010 at 10.30PM
-=============================================
-Yay! Incorporated mustache such that each displayed MOTD is displayed 
-via a mustache template. On same lines as skeet.
+Thanks
+
+- Ryan Dahl for Node.js
+  http://nodejs.org
+
+- Brian Hammond for the Node.js Redis client
+  http://github.com/fictorial/redis-node-client/
+
+- Marie Rose Cook for streethoarding
+  http://github.com/maryrosecook/streethoarding
+
+- Jan Lehnardt for Mustache.js
+  http://github.com/janl/mustache.js
+
+- Present.ly for skeet
+  http://github.com/presently/skeet
+
+---
+
+Initial setup
+
+- Install Node.js
+  - In your terminal
+      git clone git://github.com/ry/node.git
+      cd node
+      ./configure
+      make
+      sudo make install
+
+- Install Redis
+  - In your terminal
+      wget http://redis.googlecode.com/files/redis-1.2.5.tar.gz
+      tar xzvf redis-1.2.5.tar.gz
+      cd redis-1.2.5
+      make
+      sudo mv redis-server /usr/bin/
+      sudo mv redis-cli /usr/bin/
+
+- Install Rollarboard
+  - In your terminal
+      git clone git://github.com/shakhan/Rollarboard
+      cd Rollarboard
+      node server.js
+  - In your web browser
+      - Visit http://localhost:3000
+
