@@ -19,10 +19,8 @@ Thanks
 - Ryan Dahl for Node.js
   http://nodejs.org
 
-/*
-- Brian Hammond for the Node.js Redis client (ABANDONED)
-  http://github.com/fictorial/redis-node-client/
-*/
+- Isaac Z. Schlueter for NPM
+  https://github.com/isaacs/npm.git
 
 - Matt Ranney for the Node.js Redis client
   https://github.com/mranney/node_redis
@@ -40,19 +38,29 @@ Thanks
 
 Initial setup
 
-- Install Node.js
+- Install Node.js (0.4.11-pre)
   - In your terminal
-      git clone git://github.com/ry/node.git
+      git clone git://github.com/joyent/node.git
       cd node
       ./configure
       make
       sudo make install
 
+- Install NPM
+  - In your terminal
+      git clone http://github.com/isaacs/npm.git
+      cd npm
+      sudo make install
+
+- Install NPM modules - redis (the redis client for node.js) and hiredis
+  - In your terminal
+      npm install hiredis redis
+
 - Install Redis
   - In your terminal
-      wget http://redis.googlecode.com/files/redis-1.2.5.tar.gz
-      tar xzvf redis-1.2.5.tar.gz
-      cd redis-1.2.5
+      wget http://redis.googlecode.com/files/redis-2.2.12.tar.gz
+      tar xzvf redis-2.2.12.tar.gz
+      cd redis-2.2.12
       make
       sudo mv redis-server /usr/bin/
       sudo mv redis-cli /usr/bin/
@@ -64,4 +72,8 @@ Initial setup
       node server.js
   - In your web browser
       - Visit http://localhost:3000
+
+---
+
+Last tested: 24th July 2011
 
