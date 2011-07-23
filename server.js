@@ -2,7 +2,7 @@ var sys = require("sys");
 var url = require("url");
 var qs = require("querystring");
 var fu = require("./fu");
-var redis = require("./redisclient");
+var redis = require("redis");
 
 // basic setup
 HOST = null; //localhost
@@ -38,7 +38,7 @@ function initialSetup() {
 //******** REDIS magic starts here *************//
 
 function getExistingMessages(res) {
-        var redisClient = new redis.Client();
+        var redisClient = redis.createClient();
         redisClient.exists('messages', function (err, value) {
                 if(value == 0) {
 			res.simpleJSON(200, {});
@@ -50,7 +50,7 @@ function getExistingMessages(res) {
 					x = (i == 0 ? '[ "' + values[0] + '"' : x + ', "' + values[i] + '"');
 				}
 				x += ' ]';
-				redisClient.close();
+				redisClient.quit();
 				res.simpleJSON(200, { message: x });
 			});
 		}
@@ -59,7 +59,7 @@ function getExistingMessages(res) {
 }
 
 function getLastTenMessages(res, message) {
-        var redisClient = new redis.Client();
+        var redisClient = redis.createClient();
         redisClient.lpush('messages', message, function (err, value) {
         	redisClient.lrange('messages', 0, 9, function (err, values) {
 			var x;
@@ -68,7 +68,7 @@ function getLastTenMessages(res, message) {
 			}
 			x += ' ]';
 	        	redisClient.ltrim('messages', 0, 9, function (err, values) {
-                		redisClient.close();
+                		redisClient.quit();
 				res.simpleJSON(200, { message: x });
 			});
 		});

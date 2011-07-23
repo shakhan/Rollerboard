@@ -19,8 +19,13 @@ Thanks
 - Ryan Dahl for Node.js
   http://nodejs.org
 
-- Brian Hammond for the Node.js Redis client
+/*
+- Brian Hammond for the Node.js Redis client (ABANDONED)
   http://github.com/fictorial/redis-node-client/
+*/
+
+- Matt Ranney for the Node.js Redis client
+  https://github.com/mranney/node_redis
 
 - Marie Rose Cook for streethoarding
   http://github.com/maryrosecook/streethoarding
